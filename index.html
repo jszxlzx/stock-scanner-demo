@@ -2,111 +2,25 @@
 <html lang="zh-HK">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Scanner 測試頁</title>
-  <style>
-    body {
-      background-color: #0f172a;
-      color: #e2e8f0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang HK", "PingFang TC", "Noto Sans TC", sans-serif;
-      padding: 24px;
-      line-height: 1.5;
-    }
-    .card {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 16px 20px;
-      max-width: 480px;
-      margin-bottom: 16px;
-      box-shadow: 0 12px 24px rgba(0,0,0,.4);
-    }
-    .tag {
-      display: inline-block;
-      font-size: 12px;
-      padding: 2px 8px;
-      border-radius: 6px;
-      background-color: #3b82f6;
-      color: #fff;
-      font-weight: 600;
-      margin-right: 8px;
-    }
-    .ticker {
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-    }
-    .priceRow {
-      font-size: 14px;
-      color: #94a3b8;
-      margin-top: 4px;
-    }
-    .reason {
-      font-size: 13px;
-      color: #cbd5e1;
-      margin-top: 12px;
-      line-height: 1.4;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Scanner Demo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 style="font-size:20px; font-weight:600; margin-bottom:16px;">今日掃描結果（示例假數據）</h1>
+  <header>
+    <h1>📊 今日股票掃描結果</h1>
+    <p class="subtitle">自動分類：放量突破・支撐反彈・收斂待爆・動能啟動</p>
+  </header>
 
-  <div style="font-size:14px; color:#94a3b8; margin-bottom:24px;">
-    呢頁而家係示範版，仲未接真數據。
-    <br>待會我哋會把佢放上 GitHub Pages，就會有公開網址。
-  </div>
+  <main id="scanner-container">
+    <!-- JS 會自動插入內容 -->
+  </main>
 
-  <h2 style="font-size:16px; font-weight:600; margin:24px 0 12px;">放量突破</h2>
+  <footer>
+    <p>v0 demo（純前端靜態頁）・未接 API ・<span id="update-time"></span></p>
+  </footer>
 
-  <div class="card">
-    <div class="tag">放量突破</div>
-    <span class="ticker">ONDS</span>
-    <div class="priceRow">$7.76 (+9.9%)</div>
-    <div class="reason">
-      成交量係20日平均嘅2.4倍，今日突破下降壓力線，
-      收市接近全日高位，屬「有人真係追入」類型。
-    </div>
-  </div>
-
-  <h2 style="font-size:16px; font-weight:600; margin:24px 0 12px;">支撐反彈</h2>
-
-  <div class="card">
-    <div class="tag" style="background-color:#10b981;">支撐反彈</div>
-    <span class="ticker">AMZN</span>
-    <div class="priceRow">$224.30 (+1.5%)</div>
-    <div class="reason">
-      接近之前支持位（約211）後拉起，RSI由超賣回到40以上，
-      MACD收窄，買盤開始護底。
-    </div>
-  </div>
-
-  <h2 style="font-size:16px; font-weight:600; margin:24px 0 12px;">收斂待爆</h2>
-
-  <div class="card">
-    <div class="tag" style="background-color:#facc15; color:#000;">收斂待爆</div>
-    <span class="ticker">SOFI</span>
-    <div class="priceRow">$8.12 (+4.2%)</div>
-    <div class="reason">
-      最近3日波幅只係10日平均嘅一半以下，
-      MACD開始轉強，價已企返上20日線，可能準備揀方向。
-    </div>
-  </div>
-
-  <h2 style="font-size:16px; font-weight:600; margin:24px 0 12px;">動能啟動</h2>
-
-  <div class="card">
-    <div class="tag" style="background-color:#ec4899;">動能啟動</div>
-    <span class="ticker">假股票XYZ</span>
-    <div class="priceRow">$32.50 (+3.1%)</div>
-    <div class="reason">
-      MACD剛剛金叉，股價已經企喺20日線同50日線之上，
-      但仲低過52週高位超過10%，屬早期轉強未過熱。
-    </div>
-  </div>
-
-  <div style="font-size:12px; color:#475569; margin-top:40px;">
-    v0 demo（純前端靜態頁）・未接API
-  </div>
+  <script src="data.js"></script>
+  <script src="logic.js"></script>
 </body>
 </html>
